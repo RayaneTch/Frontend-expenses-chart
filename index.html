@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="output.css">
+  <title>Frontend Mentor | Expenses chart component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .stat {
+      position: relative;
+    }
+    .stat:hover span {
+      opacity: 1;
+    }
+    .stat:hover .tooltip {
+      visibility: visible;
+    }
+    .current-day .bg-softRed {
+      background-color: cyan; /* Green color */
+    }
+    
+    .tooltip {
+      position: absolute;
+      bottom: calc(100% + 0.5rem); /* Adjust as needed */
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 0.5rem;
+      background-color: #382314; /* mediumBrown */
+      color: #fff; /* text-cream */
+      border-radius: 5px;
+      font-size: 0.75rem;
+      white-space: nowrap;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s, visibility 0.3s;
+      z-index: 1; /* Assure the tooltip is above other elements */
+    }
+  </style>
+</head>
+<body class="bg-cream min-h-screen m-0 font-dmSans py-14 px-5 sm:p-0 flex sm:my-28 justify-center">
+
+  <div class="container flex flex-col sm:w-[400px]">
+    <div class="bg-softRed flex justify-between rounded-lg px-4 py-4">
+      <div class="flex flex-col text-cream space-y-1">
+        <p class="text-xs">My balance</p>
+        <h1 class="text-lg font-bold">$921.48</h1>
+      </div>
+      <img src="./images/logo.svg" class="w-12">
+    </div>
+
+    <div class="bg-veryPaleOrange mt-4 px-6 py-4 rounded-lg">
+      <h1 class="text-xl font-bold text-darkBrown mb-10">Spending - Last 7 days</h1>
+      <div class="stats flex space-x-4 items-end mx-auto justify-center">
+        <div class="stat mon flex flex-col-reverse items-center">
+          <p class="text-mediumBrown text-xs mt-2">mon</p>
+          <div class="hover:opacity-40 bg-softRed w-[30px] h-[81px] rounded-sm"></div>
+          <span class="tooltip">$52.36</span>
+        </div> 
+        <div class="stat tue flex flex-col-reverse items-center">
+          <p class="text-mediumBrown text-xs mt-2">tue</p>
+          <div class="hover:opacity-40 bg-softRed w-[30px] h-[53.33px] rounded-sm"></div>
+          <span class="tooltip">$30.71</span>
+        </div>
+        <div class="stat wed flex flex-col-reverse items-center">
+          <p class="text-mediumBrown text-xs mt-2">wed</p>
+          <div class="hover:opacity-40 bg-softRed w-[30px] h-[32px] rounded-sm"></div>
+          <span class="tooltip">$20.58</span>
+        </div>
+        <div class="stat thu flex flex-col-reverse items-center">
+          <p class="text-mediumBrown text-xs mt-2">thu</p>
+          <div class="hover:opacity-40 bg-softRed w-[30px] h-[16px] rounded-sm"></div>
+          <span class="tooltip">$10.44</span>
+        </div>
+        <div class="stat fri flex flex-col-reverse items-center">
+          <p class="text-mediumBrown text-xs mt-2">fri</p>
+          <div class="hover:opacity-40 bg-softRed w-[30px] h-[140px] rounded-sm"></div>
+          <span class="tooltip">$90.02</span>
+        </div>
+        <div class="stat sat flex flex-col-reverse items-center">
+          <p class="text-mediumBrown text-xs mt-2">sat</p>
+          <div class="hover:opacity-40 bg-softRed w-[30px] h-[58px] rounded-sm"></div>
+          <span class="tooltip">$36.14</span>
+        </div>
+        <div class="stat sun flex flex-col-reverse items-center">
+          <p class="text-mediumBrown text-xs mt-2">sun</p>
+          <div class="hover:opacity-40 bg-softRed w-[30px] h-[70px] rounded-sm"></div>
+          <span class="tooltip">$41.96</span>
+        </div>
+      </div>
+
+      <hr class="mt-6 border-0 bg-cream h-0.5">      
+      <div class="flex justify-between">
+        <div class="flex flex-col  mt-6">
+          <h1 class="text-mediumBrown opacity-80 text-sm">Total this month</h1>
+          <p class="text-2xl font-bold text-darkBrown">$478.33</p>
+        </div>
+        <div class="flex flex-col items-end mt-10">
+          <h1 class="text-darkBrown text-sm font-bold">+2.4%</h1>
+          <p class="text-mediumBrown text-sm">from last month</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</body>
+<script src="index.js"></script>
+</html>
